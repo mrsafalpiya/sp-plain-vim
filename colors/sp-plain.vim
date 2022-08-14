@@ -137,7 +137,7 @@ hi Directive term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE 
 hi Exception term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi Float term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi Format term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
-call SetHi("Function", "NONE", "NONE", s:cterm08, "NONE", "NONE", s:gui08, "NONE")
+call SetHi("Function", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE")
 hi Identifier term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi Ignore term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi Include term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
@@ -157,8 +157,8 @@ hi String term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE gui
 hi Structure term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi Tag term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi Title term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
-call SetHi("Type", "NONE", "NONE", s:cterm09, "NONE", "NONE", s:gui09, "NONE")
-call SetHi("Typedef", "NONE", "NONE", s:cterm09, "NONE", "NONE", s:gui09, "NONE")
+call SetHi("Type", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE")
+call SetHi("Typedef", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE")
 hi Underlined term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 
 " Sneak
