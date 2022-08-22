@@ -108,10 +108,12 @@ call SetHi("TabLineSel", "NONE", "NONE", s:cterm07, "NONE", "NONE", s:gui07, "NO
 call SetHi("TabLineFill", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE")
 
 " Diff
-hi DiffAdd term=NONE cterm=NONE ctermfg=2 ctermbg=NONE gui=NONE guifg=#008000 guibg=NONE
+hi DiffAdd term=NONE cterm=NONE ctermfg=2 ctermbg=NONE gui=NONE guifg=#00CD00 guibg=NONE
 hi DiffChange term=NONE cterm=NONE ctermfg=3 ctermbg=NONE gui=NONE guifg=#808000 guibg=NONE
-hi DiffDelete term=NONE cterm=NONE ctermfg=1 ctermbg=NONE gui=NONE guifg=#800000 guibg=NONE
-hi DiffText term=NONE cterm=NONE ctermfg=4 ctermbg=NONE gui=NONE guifg=#000080 guibg=NONE
+hi DiffDelete term=NONE cterm=NONE ctermfg=1 ctermbg=NONE gui=NONE guifg=#CD0000 guibg=NONE
+hi diffAdded term=NONE cterm=NONE ctermfg=2 ctermbg=NONE gui=NONE guifg=#00CD00 guibg=NONE
+hi diffChanged term=NONE cterm=NONE ctermfg=3 ctermbg=NONE gui=NONE guifg=#808000 guibg=NONE
+hi diffRemoved term=NONE cterm=NONE ctermfg=1 ctermbg=NONE gui=NONE guifg=#CD0000 guibg=NONE
 
 " Spell
 hi SpellBad term=underline cterm=underline ctermfg=13 ctermbg=NONE gui=underline guifg=#FF00FF guibg=NONE
