@@ -46,7 +46,7 @@ let s:gui05   = "#ff0000" " Red - Match Paren fg
 let s:cterm05 = 9
 let s:gui06   = "#ffd700" " Gold - Todo fg
 let s:cterm06 = 220
-let s:gui07   = "#ffffff" " Plain White
+let s:gui07   = "#ffffff" " Plain White - String
 let s:cterm07 = 15
 let s:gui08   = "#afafd7" " Light Steel Blue - Functions
 let s:cterm08 = 146
@@ -54,6 +54,8 @@ let s:gui09   = "#afaf87" " Navajo White - Types
 let s:cterm09 = 144
 let s:gui0A   = "#afaf00" " Gold 2 - Indent blankline
 let s:cterm0A = 142
+let s:gui0B   = "#00ffff" " Cyan - Title
+let s:cterm0B = 51
 
 " = DEFINE COLORS =
 " Main interface
@@ -155,10 +157,10 @@ call SetHi("SpecialChar", "NONE", "NONE", s:cterm04, "NONE", "NONE", s:gui04, "N
 hi Special term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi Statement term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi StorageClass term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
-hi String term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+call SetHi("String", "NONE", "NONE", s:cterm07, "NONE", "NONE", s:gui07, "NONE")
 hi Structure term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi Tag term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
-hi Title term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+call SetHi("Title", "bold", "bold", s:cterm0B, "NONE", "bold", s:gui0B, "NONE")
 call SetHi("Type", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE")
 call SetHi("Typedef", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE")
 hi Underlined term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
