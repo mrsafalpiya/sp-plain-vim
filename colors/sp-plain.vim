@@ -32,13 +32,13 @@ function SwapHiGroup(group)
 endfunction
 
 " = COLOR VARIABLES =
-let s:gui00   = "#d0d0d0" " Main gray - Normal text fg
+let s:gui00   = "#d0d0d0" " Grey82 - Normal text fg
 let s:cterm00 = 252
-let s:gui01   = "#afd7ff" " Sky blue - Comment fg
+let s:gui01   = "#afd7ff" " LightSkyBlue1 - Comment fg
 let s:cterm01 = 153
-let s:gui02   = "#585858" " Light gray - LineNr fg
+let s:gui02   = "#585858" " Grey32 - LineNr fg
 let s:cterm02 = 240
-let s:gui03   = "#262626" " Light gray 2 - ColorColumn bg
+let s:gui03   = "#262626" " Light gray 2 - ColorColumn bg, IndentBlanklineChar fg
 let s:cterm03 = 235
 let s:gui04   = "#6c6c6c" " Light gray 3 - Folded fg
 let s:cterm04 = 242
@@ -46,16 +46,14 @@ let s:gui05   = "#ff0000" " Red - Match Paren fg
 let s:cterm05 = 9
 let s:gui06   = "#ffd700" " Gold - Todo fg
 let s:cterm06 = 220
-let s:gui07   = "#ffffff" " Plain White - String
+let s:gui07   = "#ffffff" " Plain White - String fg
 let s:cterm07 = 15
-let s:gui08   = "#afafd7" " Light Steel Blue - Functions
-let s:cterm08 = 146
-let s:gui09   = "#afaf87" " Navajo White - Types
-let s:cterm09 = 144
-let s:gui0A   = "#afaf00" " Gold 2 - Indent blankline
-let s:cterm0A = 142
-let s:gui0B   = "#00ffff" " Cyan - Title
-let s:cterm0B = 51
+let s:gui08   = "#00ffff" " Cyan - Title fg
+let s:cterm08 = 51
+let s:gui09   = "#949494" " Grey58 - IndentBlanklineContextChar fg
+let s:cterm09 = 246
+let s:gui0A   = "#303030" " Grey19 - Whitespace
+let s:cterm0A = 236
 
 " = DEFINE COLORS =
 " Main interface
@@ -65,7 +63,8 @@ call SetHi("Comment", "NONE", "NONE", s:cterm01, "NONE", "NONE", s:gui01, "NONE"
 call SetHi("FoldColumn", "NONE", "NONE", s:cterm04, "NONE", "NONE", s:gui04, "NONE")
 call SetHi("Folded", "NONE", "NONE", s:cterm04, "NONE", "NONE", s:gui04, "NONE")
 call SetHi("LineNr", "NONE", "NONE", s:cterm02, "NONE", "NONE", s:gui02, "NONE")
-call SetHi("NonText", "NONE", "NONE", s:cterm04, "NONE", "NONE", s:gui04, "NONE")
+call SetHi("NonText", "NONE", "NONE", s:cterm08, "NONE", "NONE", s:gui08, "NONE")
+call SetHi("Whitespace", "NONE", "NONE", s:cterm0A, "NONE", "NONE", s:gui0A, "NONE")
 call SetHi("SignColumn", "NONE", "NONE", s:cterm04, "NONE", "NONE", s:gui04, "NONE")
 call SetHi("SpecialComment", "NONE", "NONE", s:cterm04, "NONE", "NONE", s:gui04, "NONE")
 call SetHi("SpecialKey", "NONE", "NONE", s:cterm04, "NONE", "NONE", s:gui04, "NONE")
@@ -160,17 +159,11 @@ call SetHi("SpecialChar", "NONE", "NONE", s:cterm04, "NONE", "NONE", s:gui04, "N
 hi! link Special String
 hi Structure term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi Tag term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
-call SetHi("Title", "bold", "bold", s:cterm0B, "NONE", "bold", s:gui0B, "NONE")
+call SetHi("Title", "bold", "bold", s:cterm09, "NONE", "bold", s:gui08, "NONE")
 call SetHi("Type", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE")
 call SetHi("Typedef", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE")
 hi Underlined term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 
-" Sneak
-hi SneakLabelMask term=NONE cterm=NONE ctermfg=black ctermbg=195 gui=NONE guifg=black guibg=#d7ffff
-hi SneakTarget term=NONE cterm=NONE ctermfg=black ctermbg=195 gui=NONE guifg=black guibg=#d7ffff
-hi SneakLabelTarget term=NONE cterm=NONE ctermfg=black ctermbg=183 gui=NONE guifg=black guibg=#d7afff
-hi SneakScope term=NONE cterm=NONE ctermfg=black ctermbg=183 gui=NONE guifg=black guibg=#d7afff
-
 " Indent blankline
-call SetHi("IndentBlanklineContextChar", "nocombine", "nocombine", s:cterm0A, "NONE", "nocombine", s:gui0A, "NONE")
-call SetHi("IndentBlanklineContextStart", "nocombine,underline", "nocombine,underline", "NONE", "NONE", "nocombine,underline", "NONE", "NONE guisp=" . s:gui0A)
+call SetHi("IndentBlanklineChar", "nocombine", "nocombine", s:cterm03, "NONE", "nocombine", s:gui03, "NONE")
+call SetHi("IndentBlanklineContextChar", "nocombine", "nocombine", s:cterm09, "NONE", "nocombine", s:gui09, "NONE")
