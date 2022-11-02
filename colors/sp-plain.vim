@@ -38,9 +38,9 @@ let s:gui01   = "#afd7ff" " LightSkyBlue1 - Comment fg
 let s:cterm01 = 153
 let s:gui02   = "#585858" " Grey32 - LineNr fg
 let s:cterm02 = 240
-let s:gui03   = "#262626" " Light gray 2 - ColorColumn bg, IndentBlanklineChar fg
+let s:gui03   = "#262626" " Light gray 2 - ColorColumn bg
 let s:cterm03 = 235
-let s:gui04   = "#6c6c6c" " Light gray 3 - Folded fg
+let s:gui04   = "#6c6c6c" " Light gray 3 - Folded fg, StatusLine, CocInlayHint
 let s:cterm04 = 242
 let s:gui05   = "#ff0000" " Red - Match Paren fg
 let s:cterm05 = 9
@@ -54,6 +54,8 @@ let s:gui09   = "#949494" " Grey58 - IndentBlanklineContextChar fg
 let s:cterm09 = 246
 let s:gui0A   = "#303030" " Grey19 - Whitespace
 let s:cterm0A = 236
+let s:gui0B   = "#d7afff" " Plum2 - Structure (including class) and Function definitions
+let s:cterm0B = 183
 
 " = DEFINE COLORS =
 " Main interface
@@ -68,8 +70,9 @@ call SetHi("Whitespace", "NONE", "NONE", s:cterm0A, "NONE", "NONE", s:gui0A, "NO
 call SetHi("SignColumn", "NONE", "NONE", s:cterm04, "NONE", "NONE", s:gui04, "NONE")
 call SetHi("SpecialComment", "NONE", "NONE", s:cterm04, "NONE", "NONE", s:gui04, "NONE")
 call SetHi("SpecialKey", "NONE", "NONE", s:cterm04, "NONE", "NONE", s:gui04, "NONE")
-call SetHi("StatusLineNC", "NONE", "NONE", "fg", s:cterm04, "NONE", "fg", s:gui04)
-call SetHi("VertSplit", "NONE", "NONE", "black", s:cterm04, "NONE", "black", s:gui04)
+hi! link StatusLine Folded
+hi! link StatusLineNC Folded
+call SetHi("VertSplit", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE")
 
 " Highlighted
 call SetHi("CursorColumn", "NONE", "NONE", "NONE", s:cterm03, "NONE", "NONE", s:gui03)
@@ -86,7 +89,6 @@ call SetHi("ModeMsg", "NONE", "NONE", "69", "NONE", "NONE", "#5F87FF", "NONE")
 call SetHi("MoreMsg", "NONE", "NONE", "69", "NONE", "NONE", "#5F87FF", "NONE")
 call SetHi("Question", "NONE", "NONE", "69", "NONE", "NONE", "#5F87FF", "NONE")
 call SetHi("Search", "NONE", "NONE", "black", "6", "NONE", "black", "#00CDCD")
-call SetHi("StatusLine", "NONE", "NONE", "black", "fg", "NONE", "black", "fg")
 call SetHi("Todo", "NONE", "bold", s:cterm06, "NONE", "bold", s:gui06, "NONE")
 call SetHi("WarningMsg", "NONE", "NONE", "fg", "52", "NONE", "fg", "#5F0000")
 call SetHi("WildMenu", "NONE", "NONE", "fg", "black", "NONE", "fg", "black")
@@ -140,7 +142,7 @@ hi Directive term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE 
 hi Exception term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi Float term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi Format term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
-call SetHi("Function", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE")
+hi Function term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi Identifier term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi Ignore term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi Include term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
@@ -157,13 +159,19 @@ hi StorageClass term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NO
 call SetHi("String", "NONE", "NONE", s:cterm07, "NONE", "NONE", s:gui07, "NONE")
 call SetHi("SpecialChar", "NONE", "NONE", s:cterm04, "NONE", "NONE", s:gui04, "NONE")
 hi! link Special String
-hi Structure term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+call SetHi("Structure", "NONE", "NONE", s:cterm08, "NONE", "NONE", s:gui0B, "NONE")
 hi Tag term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 call SetHi("Title", "bold", "bold", s:cterm09, "NONE", "bold", s:gui08, "NONE")
 call SetHi("Type", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE")
 call SetHi("Typedef", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE")
 hi Underlined term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 
+" Python
+hi! link pythonFunction Structure
+
 " Indent blankline
-call SetHi("IndentBlanklineChar", "nocombine", "nocombine", s:cterm03, "NONE", "nocombine", s:gui03, "NONE")
+hi! link IndentBlanklineChar Whitespace
 call SetHi("IndentBlanklineContextChar", "nocombine", "nocombine", s:cterm09, "NONE", "nocombine", s:gui09, "NONE")
+
+" COC
+hi! link CocInlayHint Folded
