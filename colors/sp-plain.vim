@@ -40,7 +40,7 @@ let s:gui02   = "#585858" " Grey32 - LineNr fg
 let s:cterm02 = 240
 let s:gui03   = "#262626" " Light gray 2 - ColorColumn bg
 let s:cterm03 = 235
-let s:gui04   = "#6c6c6c" " Light gray 3 - Folded fg, StatusLine, CocInlayHint
+let s:gui04   = "#6c6c6c" " Light gray 3 - Folded fg, StatusLine, CocInlayHint, NormalNC
 let s:cterm04 = 242
 let s:gui05   = "#ff0000" " Red - Match Paren fg
 let s:cterm05 = 9
@@ -73,6 +73,7 @@ call SetHi("SpecialKey", "NONE", "NONE", s:cterm04, "NONE", "NONE", s:gui04, "NO
 hi! link StatusLine Folded
 hi! link StatusLineNC Folded
 call SetHi("VertSplit", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE")
+hi! link NormalNC Folded
 
 " Highlighted
 call SetHi("CursorColumn", "NONE", "NONE", "NONE", s:cterm03, "NONE", "NONE", s:gui03)
