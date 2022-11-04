@@ -176,3 +176,4 @@ call SetHi("IndentBlanklineContextChar", "nocombine", "nocombine", s:cterm09, "N
 
 " COC
 hi! link CocInlayHint Folded
+call SetHi("CocHighlightText", "NONE", "NONE", s:cterm05, s:cterm06, "NONE", s:gui05, s:gui06)
