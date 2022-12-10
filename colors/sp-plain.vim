@@ -165,8 +165,8 @@ hi diffRemoved guifg=maroon
 hi diffChanged guifg=orange
 
 hi! link DiffAdd diffAdded
-hi! DiffChange diffChanged
-hi! DiffDelete diffRemoved
+hi! link DiffChange diffChanged
+hi! link DiffDelete diffRemoved
 hi DiffText NONE
 
 " - Completion menu -
@@ -189,8 +189,8 @@ hi! link SpellRare SpellCap
 " - HTML -
 
 hi! link htmlTag LineNr
-hi! link htmlTagName LineNr
-hi! link htmlEndTag LineNr
+hi! link htmlTagName htmlTag
+hi! link htmlEndTag htmlTag
 hi! link htmlArg htmlTag
 
 call SetHi("htmlString", "NONE", "NONE", s:cterm_secondary, "NONE", "NONE", s:gui_secondary, "NONE")

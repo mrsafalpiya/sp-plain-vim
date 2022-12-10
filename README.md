@@ -4,5 +4,6 @@ The only `colorscheme` that works for me, period.
 
 ## Screenshot preview
 
-![](ss.png)
-![](ss2.png)
+![C preview](ss.png)
+![HTML/Golang template preview](ss2.png)
+![LaTeX preview](ss3.png)
