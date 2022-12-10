@@ -52,6 +52,9 @@ let s:cterm_black     = 0
 let s:gui_info        = "#767676" " Grey46
 let s:cterm_info      = 243
 
+let s:gui_warning     = "#af8700" " DarkGoldenrod
+let s:cterm_warning   = 136
+
 " Core
 " ----
 
@@ -179,7 +182,7 @@ hi PmenuThumb NONE
 " - Spelling -
 
 execute 'hi SpellBad gui=undercurl guisp=' . s:gui_error
-execute 'hi SpellCap gui=undercurl guisp=' . s:gui_gold
+execute 'hi SpellCap gui=undercurl guisp=' . s:gui_warning
 hi! link SpellLocal SpellCap
 hi! link SpellRare SpellCap
 
