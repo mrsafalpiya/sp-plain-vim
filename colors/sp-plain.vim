@@ -101,10 +101,9 @@ hi MoreMsg NONE
 " - Visual aid -
 
 call SetHi("MatchParen", "NONE", "bold", s:cterm_white, "NONE", "bold", s:gui_white, "NONE")
-call SetHi("MatchWord", "NONE", "NONE", s:cterm_white, "NONE", "NONE", s:gui_white, "NONE")
 call SetHi("Visual", "NONE", "NONE", "NONE", s:cterm_fade, "NONE", "NONE", s:gui_fade)
 hi VisualNOS NONE
-call SetHi("NonText", "NONE", "NONE", s:cterm_info, "NONE", "NONE", s:gui_info, "NONE")
+call SetHi("NonText", "NONE", "NONE", s:cterm_fade, "NONE", "NONE", s:gui_fade, "NONE")
 
 call SetHi("Todo", "NONE", "bold", s:cterm_black, s:cterm_gold, "bold", s:gui_black, s:gui_gold)
 call SetHi("Underlined", "NONE", "underline", s:cterm_base, "NONE", "underline", s:gui_base, "NONE")
@@ -194,25 +193,13 @@ hi! link SpellRare SpellCap
 hi! link htmlTag LineNr
 hi! link htmlTagName htmlTag
 hi! link htmlEndTag htmlTag
-hi! link htmlArg htmlTag
-
-call SetHi("htmlString", "NONE", "NONE", s:cterm_secondary, "NONE", "NONE", s:gui_secondary, "NONE")
-hi! link htmlValue htmlString
-
-" - CSS -
-
-hi! link cssCustomProp Normal
-
-" - Svelte -
-
-hi! link svelteExpression htmlArg
-
-" - JavaScript -
-
-hi! link javaScript Normal
 
 " Extra
 " -----
+
+" - vim-matchup -
+
+execute 'hi MatchWord gui=bold'
 
 " - Pandoc -
 
@@ -224,7 +211,9 @@ hi! link texMathZone Normal
 
 call SetHi("IndentBlanklineChar", "NONE", "NONE", s:cterm_fade, "NONE", "NONE", s:gui_fade, "NONE")
 hi! link IndentBlanklineContextChar Special
-execute 'hi IndentBlanklineContextStart gui=bold,underline guisp= ' . s:gui_secondary
+hi! link IndentBlanklineContextStart MatchWord
+" without the line below, there will be underline in IndentBlanklineContextStart
+hi! MatchWord guisp=white
 
 " - COC -
 
