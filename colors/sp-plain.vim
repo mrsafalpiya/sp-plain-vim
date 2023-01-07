@@ -63,7 +63,7 @@ let s:cterm_warning   = 136
 call SetHi("Normal", "NONE", "NONE", s:cterm_base, "NONE", "NONE", s:gui_base, "NONE")
 hi Cursor NONE
 hi! link CursorLine ColorColumn
-call SetHi("LineNr", "NONE", "NONE", s:cterm_info, "NONE", "NONE", s:gui_info, "NONE")
+call SetHi("LineNr", "NONE", "NONE", s:cterm_fade, "NONE", "NONE", s:gui_fade, "NONE")
 hi CursorLineNR NONE
 
 " - Number column -
@@ -108,9 +108,10 @@ call SetHi("NonText", "NONE", "NONE", s:cterm_fade, "NONE", "NONE", s:gui_fade, 
 call SetHi("Todo", "NONE", "bold", s:cterm_black, s:cterm_gold, "bold", s:gui_black, s:gui_gold)
 call SetHi("Underlined", "NONE", "underline", s:cterm_base, "NONE", "underline", s:gui_base, "NONE")
 execute 'hi Underlined guisp=' . s:gui_base
-hi Error NONE
-hi ErrorMsg NONE
-hi WarningMsg NONE
+call SetHi("Error", "NONE", "NONE", s:cterm_error, "NONE", "NONE", s:gui_error, "NONE")
+hi! link ErrorMsg Error
+call SetHi("Warning", "NONE", "NONE", s:cterm_warning, "NONE", "NONE", s:gui_warning, "NONE")
+hi! link WarningMsg Warning
 hi Ignore NONE
 hi SpecialKey NONE
 
@@ -190,7 +191,7 @@ hi! link SpellRare SpellCap
 
 " - HTML -
 
-hi! link htmlTag LineNr
+hi! link htmlTag Folded
 hi! link htmlTagName htmlTag
 hi! link htmlEndTag htmlTag
 
@@ -209,17 +210,17 @@ hi! link texMathZone Normal
 
 " - Indent blankline -
 
-call SetHi("IndentBlanklineChar", "NONE", "NONE", s:cterm_fade, "NONE", "NONE", s:gui_fade, "NONE")
-hi! link IndentBlanklineContextChar Special
+hi! link IndentBlanklineChar LineNr
+hi! link IndentBlanklineContextChar Folded
 hi! link IndentBlanklineContextStart MatchWord
 " without the line below, there will be underline in IndentBlanklineContextStart
 hi! MatchWord guisp=white
 
 " - COC -
 
-hi! link CocInlayHint IndentBlanklineChar
-hi! link DiagnosticVirtualTextHint IndentBlanklineChar
-hi! link CocHighlightText IndentBlanklineChar
+hi! link CocInlayHint LineNr
+hi! link DiagnosticVirtualTextHint LineNr
+hi! link CocHighlightText LineNr
 
 hi! link CocErrorHighlight SpellBad
 hi! link CocWarningHighlight SpellCap
