@@ -108,14 +108,17 @@ call SetHi("NonText", "NONE", "NONE", s:cterm_fade, "NONE", "NONE", s:gui_fade, 
 call SetHi("Todo", "NONE", "bold", s:cterm_black, s:cterm_gold, "bold", s:gui_black, s:gui_gold)
 call SetHi("Underlined", "NONE", "underline", s:cterm_base, "NONE", "underline", s:gui_base, "NONE")
 execute 'hi Underlined guisp=' . s:gui_base
-call SetHi("Error", "NONE", "NONE", s:cterm_error, "NONE", "NONE", s:gui_error, "NONE")
-hi! link ErrorMsg Error
-call SetHi("Warning", "NONE", "NONE", s:cterm_warning, "NONE", "NONE", s:gui_warning, "NONE")
-hi! link WarningMsg Warning
 hi Ignore NONE
 hi SpecialKey NONE
 
 hi Conceal NONE
+
+call SetHi("Error", "NONE", "NONE", s:cterm_error, "NONE", "NONE", s:gui_error, "NONE")
+hi! link ErrorMsg Error
+hi! link DiagnosticError Error
+call SetHi("Warning", "NONE", "NONE", s:cterm_warning, "NONE", "NONE", s:gui_warning, "NONE")
+hi! link WarningMsg Warning
+hi! link DiagnosticWarn Warning
 
 " - Variable types -
 
