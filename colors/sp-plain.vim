@@ -180,7 +180,7 @@ hi DiffText NONE
 call SetHi("Pmenu", "NONE", "NONE", "NONE", s:cterm_fade2, "NONE", "NONE", s:gui_fade2)
 call SetHi("PmenuSel", "NONE", "NONE", "NONE", s:cterm_fade, "NONE", "NONE", s:gui_fade)
 hi PmenuSbar NONE
-hi PmenuThumb NONE
+hi! link PmenuThumb PmenuSel
 
 " - Spelling -
 
@@ -197,6 +197,14 @@ hi! link SpellRare SpellCap
 hi! link htmlTag Folded
 hi! link htmlTagName htmlTag
 hi! link htmlEndTag htmlTag
+
+" - LaTeX -
+
+hi! link texDelim Normal
+hi! link texCmdItem Special
+hi! link texCmdPart texCmdItem
+hi! link texMathDelimZoneTI texCmdItem
+hi! link texMathEnvArgName Normal
 
 " Extra
 " -----
