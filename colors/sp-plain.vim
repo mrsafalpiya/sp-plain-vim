@@ -184,8 +184,8 @@ hi! link PmenuThumb PmenuSel
 
 " - Spelling -
 
-execute 'hi SpellBad gui=undercurl guisp=' . s:gui_error
-execute 'hi SpellCap gui=undercurl guisp=' . s:gui_warning
+call SetHi("SpellBad", "NONE", "NONE", s:cterm_error, "NONE", "NONE", s:gui_error, "NONE")
+call SetHi("SpellCap", "NONE", "NONE", s:cterm_warning, "NONE", "NONE", s:gui_warning, "NONE")
 hi! link SpellLocal SpellCap
 hi! link SpellRare SpellCap
 
@@ -235,6 +235,6 @@ hi! link CocHighlightText LineNr
 
 hi! link CocErrorHighlight SpellBad
 hi! link CocWarningHighlight SpellCap
-execute 'hi CocUnusedHighlight gui=undercurl guisp=' . s:gui_info
+hi! link CocUnusedHighlight CocWarningHighlight
 
 hi! link CocListLine IncSearch
