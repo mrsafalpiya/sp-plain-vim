@@ -206,6 +206,14 @@ hi! link texCmdPart texCmdItem
 hi! link texMathDelimZoneTI texCmdItem
 hi! link texMathEnvArgName Normal
 
+" - Typescript -
+
+hi! link typescriptImport NONE
+hi! link typescriptTry NONE
+hi! link typescriptExceptions NONE
+hi! link typescriptCastKeyword NONE
+hi! link typescriptExport NONE
+
 " Extra
 " -----
 
