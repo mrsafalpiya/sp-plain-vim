@@ -214,6 +214,13 @@ hi! link typescriptExceptions NONE
 hi! link typescriptCastKeyword NONE
 hi! link typescriptExport NONE
 
+" - React -
+
+hi! link jsxTagName htmlTag
+hi! link jsxCloseString jsxTagName
+hi! link jsxOpenPunct jsxTagName
+hi! link jsxClosePunct jsxTagName
+
 " Extra
 " -----
 
