@@ -63,7 +63,7 @@ let s:cterm_warning   = 136
 call SetHi("Normal", "NONE", "NONE", s:cterm_base, "NONE", "NONE", s:gui_base, "NONE")
 hi Cursor NONE
 hi! link CursorLine ColorColumn
-call SetHi("LineNr", "NONE", "NONE", s:cterm_fade, "NONE", "NONE", s:gui_fade, "NONE")
+call SetHi("LineNr", "NONE", "NONE", s:cterm_info, "NONE", "NONE", s:gui_info, "NONE")
 hi CursorLineNR NONE
 
 " - Number column -
