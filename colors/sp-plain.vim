@@ -236,7 +236,7 @@ hi! link texMathZone Normal
 
 " - Indent blankline -
 
-hi! link IndentBlanklineChar LineNr
+hi! link IndentBlanklineChar NonText
 hi! link IndentBlanklineContextChar Folded
 hi! link IndentBlanklineContextStart MatchWord
 " without the line below, there will be underline in IndentBlanklineContextStart
